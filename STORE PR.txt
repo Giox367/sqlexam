@@ -1,0 +1,26 @@
+CREATE PROCEDURE ShowViolationFromYear (@YYear INT)
+AS
+BEGIN
+	SELECT * FROM VERBALE WHERE YEAR(DataViolazione) = @YYear
+END
+GO
+
+
+
+CREATE PROCEDURE ShowViolationFromDate (@DDate DATE)
+AS
+BEGIN
+
+SELECT SUM(DecurtamentoPunti) FROM VERBALE WHERE Dataviolazione=@DDate
+
+END
+GO
+
+CREATE PROCEDURE DeleteVIolation (@ID INT)
+AS
+BEGIN
+
+DELETE FROM VERBALE WHERE idverbale = @ID
+END
+GO
+
